@@ -2,6 +2,7 @@ package com.suhun.servicelifecycle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,10 +49,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void startServiceFun(View view){
         Log.d(tag, "+++++MainActivity startServiceFun+++++");
+        Intent intent = new Intent(this, MyService.class);
+        startService(intent);
 
     }
     public void stopServiceFun(View view){
         Log.d(tag, "+++++MainActivity stopServiceFun+++++");
-
+        Intent intent = new Intent(this, MyService.class);
+        stopService(intent);
     }
 }
